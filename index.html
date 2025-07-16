@@ -3,29 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Rajesh Kanna M, a Full Stack Developer specializing in modern web technologies.">
+    <meta name="description" content="Portfolio of Rajesh Kanna M, a Full Stack Developer creating innovative web solutions.">
     <title>Rajesh Kanna M - Full Stack Developer</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #667eea;
-            --secondary: #764ba2;
-            --text-dark: #1a1a1a;
-            --text-light: #555;
-            --background: #f8f9fa;
-            --white: #ffffff;
-            --shadow: 0 5px 15px rgba(0,0,0,0.1);
-            --transition: all 0.3s ease;
+            --primary: #5a67d8;
+            --secondary: #6b46c1;
+            --accent: #ed64a6;
+            --text-dark: #1a202c;
+            --text-light: #4a5568;
+            --background: #f7fafc;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         [data-theme="dark"] {
-            --primary: #8aa2f2;
-            --secondary: #9b6cc2;
-            --text-dark: #ffffff;
-            --text-light: #cccccc;
-            --background: #1a1a1a;
-            --white: #2c2c2c;
+            --primary: #7f9cf5;
+            --secondary: #9f7aea;
+            --text-dark: #e2e8f0;
+            --text-light: #a0aec0;
+            --background: #1a202c;
+            --card-bg: #2d3748;
         }
 
         * {
@@ -35,7 +36,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
             background: var(--background);
@@ -43,83 +44,81 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 1rem;
         }
 
         /* Header */
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--white);
-            padding: 3rem 0;
-            text-align: center;
             position: relative;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--card-bg);
+            padding: 4rem 0;
+            text-align: center;
             overflow: hidden;
         }
 
-        header::before {
-            content: '';
+        .hero-particles {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200"><path d="M0,100 Q250,0 500,100 T1000,100 V200 H0 Z" fill="rgba(255,255,255,0.1)"/></svg>');
-            animation: float 6s ease-in-out infinite;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200"><path d="M0,100 Q250,50 500,100 T1000,100 V200 H0 Z" fill="rgba(255,255,255,0.15)"/></svg>');
+            animation: float 8s ease-in-out infinite;
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-15px); }
         }
 
         .profile-img {
-            width: 160px;
-            height: 160px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            border: 5px solid rgba(255,255,255,0.3);
-            background: var(--white);
+            margin: 0 auto 1rem;
+            border: 4px solid rgba(255,255,255,0.4);
+            background: var(--card-bg);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
+            font-size: 3.5rem;
             color: var(--primary);
-            position: relative;
-            z-index: 1;
+            box-shadow: var(--shadow);
+            transition: transform var(--transition);
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
         }
 
         .hero-content h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
+            font-weight: 700;
             margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         .hero-content .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 300;
             margin-bottom: 1rem;
             opacity: 0.9;
-        }
-
-        .hero-content .tagline {
-            font-size: 1rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            opacity: 0.8;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 0.8rem;
             margin-top: 1.5rem;
         }
 
         .social-links a {
-            color: var(--white);
-            font-size: 1.5rem;
-            padding: 0.6rem;
+            color: var(--card-bg);
+            font-size: 1.4rem;
+            padding: 0.5rem;
             border-radius: 50%;
             background: rgba(255,255,255,0.2);
             transition: var(--transition);
@@ -127,25 +126,26 @@
 
         .social-links a:hover {
             background: rgba(255,255,255,0.3);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
-        /* Dark Mode Toggle */
+        /* Theme Toggle */
         .theme-toggle {
             position: fixed;
             top: 1rem;
             right: 1rem;
-            background: var(--white);
+            background: var(--card-bg);
             border: none;
             padding: 0.5rem;
             border-radius: 50%;
             cursor: pointer;
             z-index: 1000;
+            box-shadow: var(--shadow);
         }
 
         /* Navigation */
         nav {
-            background: var(--white);
+            background: var(--card-bg);
             padding: 1rem 0;
             box-shadow: var(--shadow);
             position: sticky;
@@ -154,10 +154,10 @@
         }
 
         nav ul {
-            list-style: none;
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 1rem;
+            list-style: none;
         }
 
         nav a {
@@ -165,29 +165,26 @@
             color: var(--text-dark);
             font-weight: 500;
             padding: 0.5rem 1rem;
-            border-radius: 25px;
+            border-radius: 20px;
             transition: var(--transition);
         }
 
         nav a:hover,
         nav a.active {
             background: var(--primary);
-            color: var(--white);
+            color: var(--card-bg);
         }
 
         /* Sections */
         .section {
-            padding: 4rem 0;
-        }
-
-        .section:nth-child(even) {
-            background: var(--white);
+            padding: 3rem 0;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 2.5rem;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
             color: var(--text-dark);
             position: relative;
         }
@@ -195,12 +192,12 @@
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -8px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
+            width: 60px;
             height: 3px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: var(--accent);
             border-radius: 2px;
         }
 
@@ -208,15 +205,13 @@
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: center;
+            gap: 1.5rem;
         }
 
         .about-text p {
-            font-size: 1rem;
-            line-height: 1.8;
+            font-size: 0.95rem;
             color: var(--text-light);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .about-stats {
@@ -226,81 +221,85 @@
         }
 
         .stat-item {
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: 10px;
             text-align: center;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--white);
-            border-radius: 12px;
+            box-shadow: var(--shadow);
             transition: var(--transition);
         }
 
         .stat-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
 
         .stat-number {
-            font-size: 1.8rem;
-            font-weight: bold;
-            display: block;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
         }
 
         /* Skills Section */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
         }
 
         .skill-category {
-            background: var(--white);
+            background: var(--card-bg);
             padding: 1.5rem;
-            border-radius: 12px;
-            transition: var(--transition);
+            border-radius: 10px;
             box-shadow: var(--shadow);
+            transition: var(--transition);
         }
 
         .skill-category:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
 
         .skill-category h3 {
             color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
         }
 
         .skill-item {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .skill-name {
+            flex: 1;
+            font-size: 0.9rem;
         }
 
         .skill-level {
-            width: 60%;
-            height: 6px;
-            background: #e0e0e0;
+            width: 100px;
+            height: 5px;
+            background: #e2e8f0;
             border-radius: 3px;
             overflow: hidden;
         }
 
         .skill-progress {
             height: 100%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: var(--accent);
             border-radius: 3px;
-            transition: width 2s ease;
+            transition: width 1.5s ease;
         }
 
         /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
 
         .project-card {
-            background: var(--white);
-            border-radius: 12px;
+            background: var(--card-bg);
+            border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
@@ -308,107 +307,109 @@
 
         .project-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
 
         .project-image {
-            height: 180px;
+            height: 160px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
-            color: var(--white);
+            font-size: 2rem;
+            color: var(--card-bg);
         }
 
         .project-content {
-            padding: 1.5rem;
+            padding: 1rem;
         }
 
         .project-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
             color: var(--text-dark);
+            margin-bottom: 0.5rem;
         }
 
         .project-description {
+            font-size: 0.9rem;
             color: var(--text-light);
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
         }
 
         .project-tech {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .tech-tag {
-            background: #f0f0f0;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            background: #edf2f7;
+            padding: 0.3rem 0.7rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
             color: var(--text-light);
         }
 
         .project-links a {
             color: var(--primary);
             text-decoration: none;
-            font-weight: 500;
-            margin-right: 1rem;
+            font-size: 0.9rem;
+            margin-right: 0.8rem;
             transition: var(--transition);
         }
 
         .project-links a:hover {
-            color: var(--secondary);
+            color: var(--accent);
         }
 
         /* Contact Section */
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .contact-info,
         .contact-form {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 12px;
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
             box-shadow: var(--shadow);
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
         }
 
         .contact-item i {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--primary);
-            margin-right: 1rem;
-            width: 25px;
+            margin-right: 0.8rem;
         }
 
         .form-group {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
         }
 
         .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
+            font-size: 0.9rem;
             font-weight: 500;
+            color: var(--text-dark);
+            display: block;
+            margin-bottom: 0.3rem;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 0.95rem;
+            padding: 0.7rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 0.9rem;
             transition: border-color var(--transition);
         }
 
@@ -419,26 +420,28 @@
         }
 
         .btn {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--white);
-            padding: 0.8rem 1.5rem;
+            background: var(--accent);
+            color: var(--card-bg);
+            padding: 0.7rem 1.5rem;
             border: none;
-            border-radius: 8px;
-            font-size: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
             cursor: pointer;
             transition: var(--transition);
         }
 
         .btn:hover {
+            background: var(--primary);
             transform: translateY(-2px);
         }
 
         /* Footer */
         footer {
             background: var(--text-dark);
-            color: var(--white);
+            color: var(--card-bg);
             text-align: center;
             padding: 1.5rem 0;
+            font-size: 0.9rem;
         }
 
         /* Responsive Design */
@@ -452,16 +455,16 @@
         }
 
         @media (max-width: 480px) {
-            .hero-content h1 { font-size: 1.8rem; }
-            .section-title { font-size: 1.8rem; }
-            .profile-img { width: 120px; height: 120px; }
+            .hero-content h1 { font-size: 1.6rem; }
+            .section-title { font-size: 1.6rem; }
+            .profile-img { width: 100px; height: 100px; font-size: 2.5rem; }
         }
 
         /* Animations */
         .fade-in {
             opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
+            transform: translateY(15px);
+            transition: var(--transition);
         }
 
         .fade-in.visible {
@@ -476,14 +479,14 @@
     </button>
 
     <header>
+        <div class="hero-particles"></div>
         <div class="container">
             <div class="profile-img" aria-label="Profile image">
                 <i class="fas fa-user"></i>
             </div>
             <div class="hero-content">
                 <h1>Rajesh Kanna M</h1>
-                <p class="subtitle">Full Stack Developer & Software Engineer</p>
-                <p class="tagline">Crafting innovative web solutions with clean, efficient code to solve real-world problems.</p>
+                <p class="subtitle">Full Stack Developer</p>
                 <div class="social-links">
                     <a href="https://github.com/Rajeshkanna10032000-sky" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/rajesh-kanna-m-66a9b5254/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
@@ -510,9 +513,8 @@
             <h2 class="section-title fade-in">About Me</h2>
             <div class="about-content fade-in">
                 <div class="about-text">
-                    <p>Hi! I'm Rajesh Kanna M, a Full Stack Developer passionate about building scalable, user-friendly applications. My expertise spans modern web technologies, and I thrive on solving complex problems with elegant solutions.</p>
-                    <p>With a strong foundation in both frontend and backend development, I enjoy leveraging the latest tools and frameworks. I'm constantly learning and experimenting with new technologies to stay ahead in the ever-evolving tech landscape.</p>
-                    <p>Outside of coding, I contribute to open-source projects, explore emerging tech trends, and share knowledge with the developer community.</p>
+                    <p>I'm Rajesh Kanna M, a Full Stack Developer passionate about crafting scalable web solutions. I specialize in modern frameworks and thrive on turning ideas into reality.</p>
+                    <p>With expertise in both frontend and backend, I deliver clean, efficient code. When not coding, I explore new tech and contribute to open-source projects.</p>
                 </div>
                 <div class="about-stats">
                     <div class="stat-item">
@@ -538,87 +540,51 @@
 
     <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Skills & Technologies</h2>
+            <h2 class="section-title fade-in">Skills</h2>
             <div class="skills-grid fade-in">
                 <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Frontend Development</h3>
+                    <h3><i class="fas fa-code"></i> Frontend</h3>
                     <div class="skill-item">
                         <span class="skill-name">HTML5 & CSS3</span>
-                        <div class="skill-level">
-                            <div class="skill-progress" style="width: 90%;"></div>
-                        </div>
+                        <div class="skill-level"><div class="skill-progress" style="width: 90%;"></div></div>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">JavaScript</span>
-                        <div class="skill-level">
-                            <div class="skill-progress" style="width: 85%;"></div>
-                        </div>
+                        <div class="skill-level"><div class="skill-progress" style="width: 85%;"></div></div>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">React.js</span>
-                        <div class="skill-level">
-                            <div class="skill-progress" style="width: 80%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Bootstrap</span>
-                        <div class="skill-level">
-                            <div class="skill-progress" style="width: 85%;"></div>
-                        </div>
+                        <div class="skill-level"><div class="skill-progress" style="width: 80%;"></div></div>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-server"></i> Backend Development</h3>
+                    <h3><i class="fas fa-server"></i> Backend</h3>
                     <div class="skill-item">
                         <span class="skill-name">Node.js</span>
-                        <div class="skill-level">
-                            <div class="skill-progress" style="width: 75%;"></div>
-                        </div>
+                        <div class="skill-level"><div class="skill-progress" style="width: 75%;"></div></div>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">Python</span>
-                        <div class="skill-level">
-                            <div class="skill-progress" style="width: 70%;"></div>
-                        </div>
+                        <div class="skill-level"><div class="skill-progress" style="width: 70%;"></div></div>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">Express.js</span>
-                        <div class="skill-level">
-                            <div class="skill-progress" style="width: 80%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">RESTful APIs</span>
-                        <div class="skill-level">
-                            <div class="skill-progress" style="width: 85%;"></div>
-                        </div>
+                        <div class="skill-level"><div class="skill-progress" style="width: 80%;"></div></div>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> Database & Tools</h3>
+                    <h3><i class="fas fa-database"></i> Tools</h3>
                     <div class="skill-item">
                         <span class="skill-name">MongoDB</span>
-                        <div class="skill-level">
-                            <div class="skill-progress" style="width: 75%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">MySQL</span>
-                        <div class="skill-level">
-                            <div class="skill-progress" style="width: 70%;"></div>
-                        </div>
+                        <div class="skill-level"><div class="skill-progress" style="width: 75%;"></div></div>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">Git & GitHub</span>
-                        <div class="skill-level">
-                            <div class="skill-progress" style="width: 85%;"></div>
-                        </div>
+                        <div class="skill-level"><div class="skill-progress" style="width: 85%;"></div></div>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">VS Code</span>
-                        <div class="skill-level">
-                            <div class="skill-progress" style="width: 90%;"></div>
-                        </div>
+                        <div class="skill-level"><div class="skill-progress" style="width: 90%;"></div></div>
                     </div>
                 </div>
             </div>
@@ -627,7 +593,7 @@
 
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Featured Projects</h2>
+            <h2 class="section-title fade-in">Projects</h2>
             <div class="projects-grid fade-in">
                 <div class="project-card">
                     <div class="project-image">
@@ -635,16 +601,15 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">E-Commerce Platform</h3>
-                        <p class="project-description">A robust e-commerce platform with user authentication, product management, and secure payment integration.</p>
+                        <p class="project-description">A feature-rich online store with authentication and payment integration.</p>
                         <div class="project-tech">
                             <span class="tech-tag">React.js</span>
                             <span class="tech-tag">Node.js</span>
                             <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Express.js</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://your-live-demo-link.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="https://github.com/Rajeshkanna10032000-sky/ecommerce" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://your-live-demo-link.com" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            <a href="https://github.com/Rajeshkanna10032000-sky/ecommerce" target="_blank"><i class="fab fa-github"></i> Code</a>
                         </div>
                     </div>
                 </div>
@@ -653,36 +618,16 @@
                         <i class="fas fa-tasks"></i>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Task Management App</h3>
-                        <p class="project-description">A productivity app with drag-and-drop tasks, categories, deadlines, and team collaboration features.</p>
+                        <h3 class="project-title">Task Manager</h3>
+                        <p class="project-description">A productivity app with drag-and-drop tasks and team features.</p>
                         <div class="project-tech">
                             <span class="tech-tag">React.js</span>
                             <span class="tech-tag">Redux</span>
                             <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Material-UI</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://your-live-demo-link.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="https://github.com/Rajeshkanna10032000-sky/task-manager" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Analytics Dashboard</h3>
-                        <p class="project-description">A dynamic dashboard with interactive charts, real-time data, and customizable widgets for analytics.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">D3.js</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://your-live-demo-link.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="https://github.com/Rajeshkanna10032000-sky/analytics-dashboard" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://your-live-demo-link.com" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            <a href="https://github.com/Rajeshkanna10032000-sky/task-manager" target="_blank"><i class="fab fa-github"></i> Code</a>
                         </div>
                     </div>
                 </div>
@@ -692,11 +637,11 @@
 
     <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Get In Touch</h2>
+            <h2 class="section-title fade-in">Contact Me</h2>
             <div class="contact-content fade-in">
                 <div class="contact-info">
-                    <h3>Let's Connect</h3>
-                    <p>I'm excited to discuss new projects, opportunities, or just chat about tech!</p>
+                    <h3>Let's Talk</h3>
+                    <p>Reach out for projects or tech discussions!</p>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <span>your-email@example.com</span>
@@ -706,16 +651,12 @@
                         <span>+91 98765 43210</span>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Chennai, Tamil Nadu, India</span>
-                    </div>
-                    <div class="contact-item">
                         <i class="fab fa-linkedin"></i>
-                        <a href="https://www.linkedin.com/in/rajesh-kanna-m-66a9b5254/" target="_blank">LinkedIn Profile</a>
+                        <a href="https://www.linkedin.com/in/rajesh-kanna-m-66a9b5254/" target="_blank">LinkedIn</a>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <h3>Send Message</h3>
+                    <h3>Send a Message</h3>
                     <form action="https://formspree.io/f/your-form-id" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -726,14 +667,10 @@
                             <input type="email" id="email" name="email" required aria-required="true">
                         </div>
                         <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required aria-required="true">
-                        </div>
-                        <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+                            <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="btn">Send</button>
                     </form>
                 </div>
             </div>
@@ -742,12 +679,12 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 Rajesh Kanna M. All rights reserved. | Built with <i class="fas fa-heart" style="color: #e74c3c;"></i> and passion</p>
+            <p>© 2025 Rajesh Kanna M. Built with <i class="fas fa-heart" style="color: var(--accent);"></i></p>
         </div>
     </footer>
 
     <script>
-        // Dark Mode Toggle
+        // Theme Toggle
         const themeToggle = document.querySelector('.theme-toggle');
         themeToggle.addEventListener('click', () => {
             document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
@@ -756,53 +693,41 @@
 
         // Smooth Scrolling
         document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', e => {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
 
-        // Fade-in Animations
-        const observer = new IntersectionObserver((entries) => {
+        // Fade-in Animation
+        const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
-        }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
-
+        }, { threshold: 0.2 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
         // Skill Bar Animation
-        const skillObserver = new IntersectionObserver((entries) => {
+        const skillObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const progressBars = entry.target.querySelectorAll('.skill-progress');
-                    progressBars.forEach(bar => {
+                    entry.target.querySelectorAll('.skill-progress').forEach(bar => {
                         const width = bar.style.width;
-                        bar.style.width = '0%';
+                        bar.style.width = '0';
                         setTimeout(() => bar.style.width = width, 100);
                     });
                 }
             });
-        }, { threshold: 0.1 });
-
+        }, { threshold: 0.5 });
         document.querySelectorAll('.skill-category').forEach(el => skillObserver.observe(el));
 
-        // Form Submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            // Formspree handles submission; alert for user feedback
-            alert('Message sent! I’ll get back to you soon.');
-            this.reset();
-        });
-
-        // Active Nav Highlight
+        // Nav Highlight
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('nav a');
             let current = '';
             sections.forEach(section => {
-                if (window.pageYOffset >= section.offsetTop - 200) {
+                if (window.pageYOffset >= section.offsetTop - 100) {
                     current = section.getAttribute('id');
                 }
             });
